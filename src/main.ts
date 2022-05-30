@@ -5,16 +5,13 @@ import { setupStore } from './store'
 
 import 'normalize.css'
 import './assets/css/index.less'
-// import { ElButton } from 'element-plus'
-// import 'ant-design-vue/dist/antd.css'
 
 const app = createApp(App) // 创建vue实例
-// app.component(ElButton.name, ElButton)
 
 // Configure store(pinia)
 setupStore(app)
 
 // Configure routing
 app.use(router)
-// app.use(store) // 挂载
+
 app.mount('#app') // 挂载实例
