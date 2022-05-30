@@ -1,3 +1,11 @@
+<template>
+  <div id="app">
+      <UsePinia />
+    <router-link to="/main">首页</router-link>
+    <router-view></router-view>
+  </div>
+</template>
+
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
@@ -5,11 +13,6 @@
 import UsePinia from './components/usePinia.vue'
 </script>
 
-<template>
-  <!-- <h2>vite</h2>
-  <img alt="Vue logo" src="./assets/logo.png" />-->
-  <h2>Hello vite</h2>
-  <UsePinia />
-</template>
+
 
 <style></style>

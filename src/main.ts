@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 // import store from './store'
+import router from './router'
 import { setupStore } from './store'
 
 // import { ElButton } from 'element-plus'
@@ -9,7 +10,10 @@ import { setupStore } from './store'
 const app = createApp(App) // 创建vue实例
 // app.component(ElButton.name, ElButton)
 
-// Configure store
+// Configure store(pinia)
 setupStore(app)
-// app.use(store) // 挂载pinia
+
+// Configure routing
+app.use(router)
+// app.use(store) // 挂载
 app.mount('#app') // 挂载实例
