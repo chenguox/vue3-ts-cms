@@ -1,23 +1,19 @@
 <template>
   <h2>1111111111</h2>
-  <!-- <div>{{ userStore.name }}</div> -->
-  <el-button type="primary">Primary</el-button>
-  <el-link type="primary">primary</el-link>
-  <el-rate v-model="value1" />
+  <div>{{ userStore.name }}</div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-// import { useUserStore } from '@/store/modules/user'
-
-// const userStore = useUserStore()
+import { useUserStore } from '@/store/modules/user.ts'
 
 export default defineComponent({
   name: 'usePinia',
   setup() {
-    const value1 = ref(null)
+    const userStore = useUserStore()
+
     return {
-      value1
+      userStore
     }
   }
 })
