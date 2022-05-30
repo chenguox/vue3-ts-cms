@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-// import store from './store'
 import router from './router'
 import { setupStore } from './store'
 
+import 'normalize.css'
+import './assets/css/index.less'
 // import { ElButton } from 'element-plus'
 // import 'ant-design-vue/dist/antd.css'
 
