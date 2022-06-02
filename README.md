@@ -31,15 +31,18 @@
 - 提交规范 : Commitizen + Commitlint
 - 自动部署 : Centos + Jenkins + Nginx
 
-[配置代码规范]()
+# 项目规范
+
+文件命名规范
+
+文件夹：统一小写，多个单纯使用-分割
+
+文件(.ts .vue .json .d.ts) ：统一小写，多个单纯使用-分割
+
+| 文件夹 | 统一小写，多个单纯使用-分割 | 例如：not-found      |
+| ------ | --------------------------- | -------------------- |
+| 文件   | 统一小写，多个单纯使用-分割 | 例如：date-format.ts |
+
+[配置代码规范](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/src/docs/CodeSpecification.md)
 
 [项目搭建](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/README.Build.md)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
-
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
