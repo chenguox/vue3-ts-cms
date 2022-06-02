@@ -48,6 +48,13 @@
 | 组件的 props          | 小写开头，驼峰命名，必须编写类型默认值                                                            |                                                                    |
 | 组件的样式            | 作用域：scoped, lang = scss / less<br />类名：统一小写, 多个单词使用-分割                         |                                                                    |
 
+| Git 提交规范 | 要求           |
+| ------------ | -------------- |
+| add 操作     | git add        |
+| commit 操作  | npm run commit |
+| pull 操作    | git pull       |
+| push 操作    | git push       |
+
 [配置代码规范](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/src/docs/CodeSpecification.md)
 
 [项目搭建](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/README.Build.md)
