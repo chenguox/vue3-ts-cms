@@ -31,7 +31,9 @@
 - 提交规范 : Commitizen + Commitlint
 - 自动部署 : Centos + Jenkins + Nginx
 
-[项目搭建](https://github.com/Coder-Cgx/vue3-ts-cms/README.Build.md)
+[配置代码规范]()
+
+[项目搭建](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/README.Build.md)
 
 ## Type Support For `.vue` Imports in TS
 
