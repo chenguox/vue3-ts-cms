@@ -55,6 +55,6 @@
 | pull 操作    | git pull       |
 | push 操作    | git push       |
 
-[配置代码规范](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/src/docs/CodeSpecification.md)
+[配置代码规范](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/src/docs/code_style.md)
 
 [项目搭建](https://github.com/Coder-Cgx/vue3-ts-cms/blob/master/README.Build.md)
