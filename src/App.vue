@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-      <UsePinia />
-    <router-link to="/main">首页</router-link>
+      <!-- <UsePinia />
+    <router-link to="/main">首页</router-link> -->
     <router-view></router-view>
   </div>
 </template>
