@@ -1,10 +1,37 @@
-# Vue 3 + TypeScript + Vite
+# Vue Ts Cms
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# 简介
 
-## Recommended IDE Setup
+该项目使用了最新的 `vue3`,`vite2`,`TypeScript`等主流技术开发，用于将学到的知识进行实线，正在不断开发完善。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+# 预览
+
+- 占无
+
+测试账号： admin/123456
+
+效果截图（占无）
+
+# 技术栈
+
+- 开发工具 : Visual Studio Code
+- 编程语言 : TypeScript 4.x + JavaScript
+- 构建工具 : Vite 2.x / Webpack5.x
+- 前端框架 : Vue 3.x
+- 路由工具 : Vue Router 4.x
+- 状态管理 : Pinia / Vuex 4.x
+- UI 框架 : Element Plus
+- 可视化 : Echart5.x
+- 富文本 : WangEditor
+- 工具库 : @vueuse/core + dayjs + countup.js
+- CSS 预编译 : Sass / Less
+- HTTP 工具 : Axios
+- Git Hook 工具 : husky
+- 代码规范 : EditorConfig + Prettier + ESLint
+- 提交规范 : Commitizen + Commitlint
+- 自动部署 : Centos + Jenkins + Nginx
+
+[项目搭建](https://github.com/Coder-Cgx/vue3-ts-cms/README.Build.md)
 
 ## Type Support For `.vue` Imports in TS
 
