@@ -1,13 +1,18 @@
 <template>
   <div class="login">
-    <LoginLeft />
-    <LoginRight />
+    <LoginHeader class="wrap-v1" />
+    <LoginTip />
+    <LoginContent />
+    <!-- <LoginRight /> -->
   </div>
 </template>
 
 <script lang="ts" setup>
-import LoginLeft from './cpns/login-left.vue'
-import LoginRight from './cpns/login-right.vue'
+import LoginHeader from './cpns/login-header.vue'
+import LoginTip from './cpns/login-tip.vue'
+import LoginContent from './cpns/login-content.vue'
+// import LoginLeft from './cpns/login-left.vue'
+// import LoginRight from './cpns/login-right.vue'
 </script>
 
 <style scoped lange="less">
@@ -16,5 +21,8 @@ import LoginRight from './cpns/login-right.vue'
   height: 100%;
 
   display: flex;
+  flex-direction: column;
+
+  /* background: url('../../assets/img/login-bg2.svg'); */
 }
 </style>

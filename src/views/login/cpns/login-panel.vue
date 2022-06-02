@@ -1,11 +1,10 @@
 <template>
-  <div class="login-panel">
-    <h1 class="title">后台管理系统</h1>
+  <el-card class="login-panel">
     <el-tabs type="border-card" stretch v-model="currentTab">
       <el-tab-pane name="account">
         <template #label>
           <span>
-            <el-icon><avatar /></el-icon>账号登录
+            <el-icon><Avatar /></el-icon>账号登录
           </span>
         </template>
         <LoginAccount ref="accountRef" />
@@ -30,7 +29,7 @@
     <el-button type="primary" class="login-btn" @click="handleLoginClick"
       >立即登录</el-button
     >
-  </div>
+  </el-card>
 </template>
 
 <script lang="ts" setup>
@@ -57,6 +56,11 @@ const handleLoginClick = () => {
 <style scoped lang="less">
 .login-panel {
   width: 320px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .account-control {
     margin-top: 10px;
     display: flex;
