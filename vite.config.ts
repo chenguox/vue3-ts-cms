@@ -12,7 +12,8 @@ export default defineConfig({
   resolve: {
     //设置别名
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
+      components: '@/components'
     }
   },
   plugins: [
