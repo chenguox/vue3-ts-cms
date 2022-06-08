@@ -13,7 +13,8 @@ export default defineConfig({
     //设置别名
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      components: '@/components'
+      components: '@/components',
+      store: '@/store'
     }
   },
   plugins: [

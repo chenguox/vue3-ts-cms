@@ -15,30 +15,24 @@ export function getUsers() {
   })
 }
 
-// export function getUsers() {
-//   return gxRequest.post<IDataType<ILoginResult>>({
-//     url: LoginAPI.AccountLogin
-//   })
-// }
+// 账号密码登录
+export function accountLoginRequest(account: IAccount) {
+  return gxRequest.post<IDataType<ILoginResult>>({
+    url: LoginAPI.AccountLogin,
+    data: account
+  })
+}
 
-// // 账号密码登录
-// export function accountLoginRequest(account: IAccount) {
-//   return gxRequest.post<IDataType<ILoginResult>>({
-//     url: LoginAPI.AccountLogin,
-//     data: account
-//   })
-// }
-
-// // 请求用户信息
-// export function requestUserInfoById(id: number) {
-//   return gxRequest.get<IDataType>({
-//     url: LoginAPI.LoginUserInfo + id
-//   })
-// }
+// 请求用户信息
+export function requestUserInfoById(id: number) {
+  return gxRequest.get<IDataType>({
+    url: LoginAPI.LoginUserInfo + id
+  })
+}
 
 // // 通过角色id获取菜单
-// export function requestUserMenusByRoleId(id: number) {
-//   return gxRequest.get<IDataType>({
-//     url: LoginAPI.UserMenus + id + '/menu'
-//   })
-// }
+export function requestUserMenusByRoleId(id: number) {
+  return gxRequest.get<IDataType>({
+    url: LoginAPI.UserMenus + id + '/menu'
+  })
+}
