@@ -21,6 +21,10 @@
 <script lang="ts" setup>
 import NavHeader from 'components/nav-header'
 import NavMenu from 'components/nav-Menu'
+import { getUsers } from '@/service/login/login'
+getUsers().then((res) => {
+  console.log(res)
+})
 </script>
 
 <style scoped lang="less">
