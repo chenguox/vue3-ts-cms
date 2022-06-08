@@ -21,19 +21,6 @@
 <script lang="ts" setup>
 import NavHeader from 'components/nav-header'
 import NavMenu from 'components/nav-Menu'
-// import { getUsers } from '@/service/login/login'
-// getUsers().then((res) => {
-//   console.log(res)
-// })
-import { useUserStore } from 'store/modules/user'
-const userStore = useUserStore()
-const login = (payload) => {
-  userStore.accountLoginAction(payload)
-}
-login({
-  name: 'coderwhy',
-  password: '123456'
-})
 </script>
 
 <style scoped lang="less">

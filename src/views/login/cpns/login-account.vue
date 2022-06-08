@@ -13,13 +13,12 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-// import { useStore } from 'vuex'
 import { ElForm } from 'element-plus'
 import localCache from '@/utils/cache'
 
 import { rules } from '../config/account-config'
-
-// const store = useStore()
+import { useUserStore } from 'store/modules/user'
+const userStore = useUserStore()
 
 const account = reactive({
   name: localCache.getCache('name') ?? '',
@@ -42,10 +41,14 @@ const loginAction = (isKeepPassword: boolean) => {
       }
 
       // 2. 开始进行登录验证
-      // store.dispatch('login/accountLoginAction', { ...account })
+      userStore.accountLoginAction({ ...account })
     }
   })
 }
+
+defineExpose({
+  loginAction
+})
 </script>
 
 <style></style>

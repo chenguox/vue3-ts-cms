@@ -34,6 +34,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { Avatar, Cellphone } from '@element-plus/icons-vue'
 import LoginAccount from './login-account.vue'
 import LoginPhone from './login-phone.vue'
 
@@ -46,6 +47,7 @@ const currentTab = ref('account')
 // 2、定义方法
 const handleLoginClick = () => {
   if (currentTab.value === 'account') {
+    // console.log(accountRef.value)
     accountRef.value?.loginAction(isKeepPassword.value)
   } else {
     phoneRef.value?.loginAction()
