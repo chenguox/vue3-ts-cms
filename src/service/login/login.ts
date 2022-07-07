@@ -9,11 +9,11 @@ enum LoginAPI {
 }
 
 // 测试
-export function getUsers() {
-  return gxRequest.post<IDataType<ILoginResult>>({
-    url: LoginAPI.AccountLogin
-  })
-}
+// export function getUsers() {
+//   return gxRequest.post<IDataType<ILoginResult>>({
+//     url: LoginAPI.AccountLogin
+//   })
+// }
 
 // 账号密码登录
 export function accountLoginRequest(account: IAccount) {

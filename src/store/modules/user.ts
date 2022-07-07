@@ -11,8 +11,8 @@ import {
   requestUserMenusByRoleId
 } from '@/service/login/login'
 
-export const useUserStore = defineStore({
-  id: 'user', // id必填，且需要唯一
+const useUserStore = defineStore('user', {
+  // id: 'user', // id必填，且需要唯一
   state: () => {
     return {
       token: '',
@@ -40,10 +40,12 @@ export const useUserStore = defineStore({
       this.userMenus = userMenus
       localCache.setCache('userMenus', userMenus)
 
-      console.log(this.token, this.userInfo, this.userMenus)
+      // console.log(this.token, this.userInfo, this.userMenus)
 
       // 4、跳转到首页
       router.push('/main')
     }
   }
 })
+
+export default useUserStore

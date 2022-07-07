@@ -15,10 +15,6 @@ const routes: RouteRecordRaw[] = [
     path: '/main',
     component: () => import('../views/main/main.vue')
   }
-  // {
-  //   path: '/login',
-  //   component: () => import('../views/login/login.vue')
-  // }
 ]
 
 // 创建 router 对象
