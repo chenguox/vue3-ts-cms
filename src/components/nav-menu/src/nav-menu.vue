@@ -1,14 +1,15 @@
 <template>
   <div class="nav-menu">
-    <div class="logo">
-      <img class="img" src="~@/assets/img/logo.svg" alt="logo" />
-      <span v-show="!collapse" class="title">Vue3+TS+Vite</span>
-    </div>
+    <transition name="logo">
+      <div class="logo">
+        <img class="img" src="~@/assets/img/logo.svg" alt="logo" />
+        <span v-show="!collapse" class="title">Vue3+TS+Vite</span>
+      </div>
+    </transition>
     <el-menu
       class="el-menu-vertical-demo"
       default-active="2"
-      @open="handleOpen"
-      @close="handleClose"
+      :collapse="collapse"
     >
       <template v-for="item in userMenus" :key="item.id">
         <el-sub-menu :index="item.id + ''">
@@ -28,23 +29,26 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting
-} from '@element-plus/icons-vue'
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
 import useUserStore from 'store/user/user'
-const { userMenus } = useUserStore()
-console.log(userMenus)
-// const userList = comp
+
+export default defineComponent({
+  props: {
+    collapse: {
+      type: Boolean,
+      default: false
+    }
+  },
+  setup(props) {
+    const userStore = useUserStore()
+    const userMenus = computed(() => userStore.userMenus)
+
+    return {
+      userMenus
+    }
+  }
+})
 </script>
 
 <style scoped lang="less">
