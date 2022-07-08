@@ -15,7 +15,14 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/main',
-    component: () => import('../views/main/main.vue')
+    name: 'main',
+    component: () => import('../views/main/main.vue'),
+    children: [
+      {
+        path: '/main/system/user',
+        component: () => import('../views/main/system/user/user.vue')
+      }
+    ]
   }
 ]
 
@@ -26,10 +33,10 @@ const router = createRouter({
 })
 
 // 路由前置守卫
-router.beforeEach((to)=>{
-  if(to.path !== '/login'){
+router.beforeEach((to) => {
+  if (to.path !== '/login') {
     const token = localCache.getCache('token')
-    if(!token){
+    if (!token) {
       return '/login'
     }
   }

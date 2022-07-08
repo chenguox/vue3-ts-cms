@@ -9,7 +9,7 @@
       </template>
     </el-icon>
     <div class="content">
-      <span>面包屑</span>
+      <gx-breadcrumb :breadcrumbs="breadcrumbs" />
       <span>用户信息</span>
     </div>
   </div>
@@ -17,8 +17,14 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import GxBreadcrumb from '@/base-ui/breadcrumb'
+import useUserStore from 'store/user/user'
+import { useRoute } from 'vue-router'
 
 export default defineComponent({
+  components: {
+    GxBreadcrumb
+  },
   emits: ['foldChange'],
   setup(props, { emit }) {
     const isFold = ref(false)
@@ -26,6 +32,11 @@ export default defineComponent({
       isFold.value = !isFold.value
       emit('foldChange', isFold.value)
     }
+
+    // const userStore = useUserStore()
+    // const userMenus = userStore.userMenus
+    // const route = useRoute()
+    // const currentPath = route.path
 
     return {
       isFold,
