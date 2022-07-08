@@ -1,2 +1,5 @@
 import { createPinia } from 'pinia'
-export default createPinia()
+// import useUserStore from './user/user.ts'
+const store = createPinia()
+
+export default store

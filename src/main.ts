@@ -2,16 +2,19 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import pinia from './store'
-// import '@/mock'
+import useUserStore from './store/user/user'
 
 import 'normalize.css'
 import './assets/css/index.less'
 
 const app = createApp(App) // 创建vue实例
 
-// Configure store(pinia)
 app.use(pinia)
-// Configure routing
 app.use(router)
+
+// 初始化用户数据
+const userStore = useUserStore()
+userStore.loadLocalLogin()
+
 
 app.mount('#app') // 挂载实例

@@ -41,7 +41,7 @@ const handleOpen = (key: string, keyPath: string[]) => {
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
-import useUserStore from 'store/modules/user'
+import useUserStore from 'store/user/user'
 const { userMenus } = useUserStore()
 console.log(userMenus)
 // const userList = comp

@@ -12,7 +12,6 @@ import {
 } from '@/service/login/login'
 
 const useUserStore = defineStore('user', {
-  // id: 'user', // id必填，且需要唯一
   state: () => {
     return {
       token: '',
@@ -44,6 +43,20 @@ const useUserStore = defineStore('user', {
 
       // 4、跳转到首页
       router.push('/main')
+    },
+    loadLocalLogin(){
+      const token = localCache.getCache('token')
+      if(token){
+        this.token = token
+      }
+      const userInfo = localCache.getCache('userInfo')
+      if(userInfo){
+        this.userInfo = userInfo
+      }
+      const userMenus = localCache.getCache('userMenus')
+      if(userMenus){
+        this.userMenus = userMenus
+      }
     }
   }
 })

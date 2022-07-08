@@ -17,7 +17,7 @@ import { ElForm } from 'element-plus'
 import localCache from '@/utils/cache'
 
 import { rules } from '../config/account-config'
-import useUserStore from 'store/modules/user'
+import useUserStore from 'store/user/user'
 const userStore = useUserStore()
 
 const account = reactive({
