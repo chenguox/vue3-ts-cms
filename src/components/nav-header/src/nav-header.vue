@@ -10,7 +10,7 @@
     </el-icon>
     <div class="content">
       <gx-breadcrumb :breadcrumbs="breadcrumbs" />
-      <span>用户信息</span>
+      <user-info />
     </div>
   </div>
 </template>
@@ -18,13 +18,15 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
 import GxBreadcrumb from '@/base-ui/breadcrumb'
+import UserInfo from './user-info.vue'
 import useUserStore from 'store/user/user'
 import { useRoute } from 'vue-router'
 import { pathMapBreadcrumbs } from '@/utils/map-menus.ts'
 
 export default defineComponent({
   components: {
-    GxBreadcrumb
+    GxBreadcrumb,
+    UserInfo
   },
   emits: ['foldChange'],
   setup(props, { emit }) {
@@ -45,6 +47,7 @@ export default defineComponent({
 
     return {
       isFold,
+      breadcrumbs,
       handleFoldClick
     }
   }
@@ -59,7 +62,7 @@ export default defineComponent({
   height: 100%;
 
   .fold-menu {
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
   }
 
@@ -68,7 +71,7 @@ export default defineComponent({
     justify-content: space-between;
     align-items: center;
     flex: 1;
-    padding: 0 20px;
+    padding: 0 15px;
   }
 }
 </style>
