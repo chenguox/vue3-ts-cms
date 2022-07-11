@@ -16,10 +16,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 import GxBreadcrumb from '@/base-ui/breadcrumb'
 import useUserStore from 'store/user/user'
 import { useRoute } from 'vue-router'
+import { pathMapBreadcrumbs } from '@/utils/map-menus.ts'
 
 export default defineComponent({
   components: {
@@ -33,10 +34,14 @@ export default defineComponent({
       emit('foldChange', isFold.value)
     }
 
-    // const userStore = useUserStore()
-    // const userMenus = userStore.userMenus
-    // const route = useRoute()
-    // const currentPath = route.path
+    const userStore = useUserStore()
+    const breadcrumbs = computed(() => {
+      const userMenus = userStore.userMenus
+      const route = useRoute()
+      const currentPath = route.path
+      console.log('currentPath', currentPath)
+      return pathMapBreadcrumbs(userMenus, currentPath)
+    })
 
     return {
       isFold,

@@ -2,6 +2,8 @@ import { IBreadcrumb } from '@/base-ui/breadcrumb'
 import { RouteRecordRaw } from 'vue-router'
 // const files = require.context('@/components/home', false, /\.vue$/)
 
+let firstMenu: any = null
+
 export async function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = []
 
@@ -20,6 +22,10 @@ export async function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
     for (const subItem of item.children) {
       const route = allRoutes.find((route) => route.path === subItem.menuUrl)
       if (route) routes.push(route)
+      // 用于 main 做重定向
+      if (!firstMenu) {
+        firstMenu = subItem
+      }
     }
   }
 
@@ -31,9 +37,19 @@ export async function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
  * @param userMenus
  * @param currentPath
  */
-// export function pathMapBreadcrumbs(userMenus: any[], currentPath: string){
-//   const breadcrumbs: IBreadcrumb[] = []
-//   pathMapToMenu(userMenus, )
-// }
+export function pathMapBreadcrumbs(userMenus: any[], currentPath: string) {
+  const breadcrumbs: IBreadcrumb[] = []
+  for (const item of userMenus) {
+    for (const subItem of item.children) {
+      if (currentPath === subItem.menuUrl) {
+        breadcrumbs.push({ name: item.menuName, path: item.menuUrl })
+        breadcrumbs.push({ name: subItem.menuName, path: subItem.menuUrl })
+      }
+    }
+  }
 
-// export function pathMapToMenu()
+  console.log(breadcrumbs)
+  return breadcrumbs
+}
+
+export { firstMenu }
