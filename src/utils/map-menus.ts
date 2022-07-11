@@ -1,23 +1,29 @@
 import { IBreadcrumb } from '@/base-ui/breadcrumb'
-import { RouteRecordRaw } from 'vue-router' 'vue-router'
+import { RouteRecordRaw } from 'vue-router'
+// const files = require.context('@/components/home', false, /\.vue$/)
 
-export function mapMenusToRoutes(userMenus: any[]):RouteRecordRaw[] {
+export async function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = []
 
   // 1、先去加载默认所有的routes
   const allRoutes: RouteRecordRaw[] = []
   // 检索 mian 目录下的文件
-  const routeFiles = require.context('../router/main',true,/\.ts/)
-  console.log('routeFiles:',routeFiles);
-  routeFiles.keys().forEach(key=>{
-    const route = require('../router/main' + key.split('.')[1])
-    allRoutes.push(route.default)
-  })
+  // 在 vite 中通过 import.meta.glob 从文件系统导入多个模块
+  const routeFiles = import.meta.glob('@/router/main/*/*/*.ts')
+  for (const path in routeFiles) {
+    const module = await routeFiles[path]()
+    allRoutes.push(module.default)
+  }
 
   // 2.根据菜单获取需要添加的routes
-  for(const item of userMenus){
-    const subItem = item.children
+  for (const item of userMenus) {
+    for (const subItem of item.children) {
+      const route = allRoutes.find((route) => route.path === subItem.menuUrl)
+      if (route) routes.push(route)
+    }
   }
+
+  return routes
 }
 
 /**

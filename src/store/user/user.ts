@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 // 自己的工具函数
 import router from '@/router'
 import localCache from '@/utils/cache'
+import { mapMenusToRoutes } from '@/utils/map-menus'
 // 相关请求
 import { IAccount } from '@/service/login/type'
 import {
@@ -39,22 +40,30 @@ const useUserStore = defineStore('user', {
       this.userMenus = userMenus
       localCache.setCache('userMenus', userMenus)
 
+      // userMenus => routes
+      const routes = await mapMenusToRoutes(userMenus)
+
+      // 将 routes 添加到 router.main.children
+      routes.forEach((route) => router.addRoute('main', route))
+
+      console.log('routes:', routes)
+
       // console.log(this.token, this.userInfo, this.userMenus)
 
       // 4、跳转到首页
       router.push('/main')
     },
-    loadLocalLogin(){
+    loadLocalLogin() {
       const token = localCache.getCache('token')
-      if(token){
+      if (token) {
         this.token = token
       }
       const userInfo = localCache.getCache('userInfo')
-      if(userInfo){
+      if (userInfo) {
         this.userInfo = userInfo
       }
       const userMenus = localCache.getCache('userMenus')
-      if(userMenus){
+      if (userMenus) {
         this.userMenus = userMenus
       }
     }
