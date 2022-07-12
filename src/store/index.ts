@@ -1,9 +1,11 @@
 import { createPinia } from 'pinia'
-import useUserStore from './user/user.ts'
+import useUserStore from './modules/user.ts'
 const store = createPinia()
 
-export function setupStore(){
+export async function setupStore() {
   const store = useUserStore()
-  store.loadLocalLogin()
+  console.log('执行store1:', store)
+  await store.loadLocalLogin()
+  console.log('执行store2:', store)
 }
 export default store

@@ -30,7 +30,7 @@ export function requestUserInfoById(id: number) {
   })
 }
 
-// // 通过角色id获取菜单
+// 通过角色id获取菜单
 export function requestUserMenusByRoleId(id: number) {
   return gxRequest.get<IDataType>({
     url: LoginAPI.UserMenus + id + '/menu'

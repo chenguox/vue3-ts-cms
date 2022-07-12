@@ -19,7 +19,7 @@
 import { defineComponent, ref, computed } from 'vue'
 import GxBreadcrumb from '@/base-ui/breadcrumb'
 import UserInfo from './user-info.vue'
-import useUserStore from 'store/user/user'
+import useUserStore from 'store/modules/user'
 import { useRoute } from 'vue-router'
 import { pathMapBreadcrumbs } from '@/utils/map-menus.ts'
 
