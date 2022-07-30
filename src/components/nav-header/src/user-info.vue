@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import useUserStore from '@/store/user/user'
+import useUserStore from '@/store/modules/user'
 import ActionsPanel from '@/base-ui/actions'
 
 export default defineComponent({

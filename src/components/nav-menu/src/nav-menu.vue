@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import useUserStore from 'store/user/user'
+import useUserStore from 'store/modules/user'
 import { useRouter, useRoute } from 'vue-router'
 
 export default defineComponent({
